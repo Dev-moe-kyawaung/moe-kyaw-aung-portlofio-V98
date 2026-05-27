@@ -1,53 +1,45 @@
-const CACHE_NAME = 'moe-kyaw-aung-portfolio-v98';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
-];
+# ⭐ Moe Kyaw Aung Portfolio V 98
 
-// Install event - cache files
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('[ServiceWorker] Caching files');
-        return cache.addAll(urlsToCache);
-      })
-      .then(() => self.skipWaiting())
-  );
-});
+**Senior Android Developer** • 12 Years Experience
 
-// Activate event - clean old caches
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('[ServiceWorker] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
-  );
-});
+[![GitHub stars](https://img.shields.io/github/stars/Dev-moe-kyawaung/moe-kyaw-aung-portfolio?style=social)](https://github.com/Dev-moe-kyawaung/moe-kyaw-aung-portfolio)
+[![GitHub forks](https://img.shields.io/github/forks/Dev-moe-kyawaung/moe-kyaw-aung-portfolio?style=social)](https://github.com/Dev-moe-kyawaung/moe-kyaw-aung-portfolio/fork)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-// Fetch event - serve from cache first
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
-      })
-      .catch(() => {
-        // Offline fallback
-        if (event.request.destination === 'document') {
-          return caches.match('/index.html');
-        }
-      })
-  );
-});
+---
+
+## 🚀 About
+
+Premium ultra-professional portfolio website for **Moe Kyaw Aung**, a Senior Android Developer with 12 years of experience.
+
+Built with modern technologies and designed with a **Terminal / Hacker aesthetic** using a Deep Ocean color palette.
+
+## ✨ Features
+
+- ⚡ **Terminal / Hacker Aesthetic** — Monospace fonts, code-inspired UI
+- 🌙 **Dark/Light Mode Toggle** — Smooth theme switching
+- 🖱️ **Custom Animated Cursor** — Interactive cursor effects
+- ✨ **Typing Animation** — Hero text typewriter effect
+- 📱 **PWA Support** — Installable as native app
+- 📊 **Animated Statistics** — Counter animations
+- 📅 **Career Timeline** — Animated experience timeline
+- 💼 **Project Showcase** — Featured app collection
+- 📜 **Certificates Section** — Professional credentials
+- 📧 **Contact Form** — Validated form with success feedback
+- ❓ **FAQ Accordion** — Interactive questions
+- 💰 **Pricing Table** — Service offerings
+
+## 🛠️ Tech Stack
+
+- HTML5 + CSS3
+- Bootstrap 5
+- Vanilla JavaScript
+- Font Awesome 6
+- Google Fonts (Inter + JetBrains Mono)
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Dev-moe-kyawaung/moe-kyaw-aung-portfolio.git
+cd moe-kyaw-aung-portfolio
